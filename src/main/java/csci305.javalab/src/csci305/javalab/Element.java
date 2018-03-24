@@ -21,18 +21,4 @@ public abstract class Element {
     }
     
     public abstract String compareTo(Element e);
-    
-    public static void main(String args[]){
-        Element rock = new Rock("Rock");
-        Element paper = new Paper("Paper");
-        System.out.println(rock.compareTo(paper));
-        System.out.println(paper.compareTo(rock));
-        System.out.println(rock.compareTo(rock));
-        
-        Player p1 = new StupidBot("StupidBot");
-        Player p2 = new RandomBot("RandomBot");
-        Element p1move = p1.play();
-        Element p2move = p2.play();
-        System.out.println(p1move.compareTo(p2move));
-    }
 }

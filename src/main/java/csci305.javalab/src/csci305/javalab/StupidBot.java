@@ -19,4 +19,9 @@ public class StupidBot extends Player{
     public Element play(){
         return myChoice;
     }
+    
+    public Element play(String s){
+        Element e = new Rock("Don't be here");
+        return e;
+    }
 }

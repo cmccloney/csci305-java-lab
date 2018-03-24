@@ -5,22 +5,20 @@
  */
 package csci305.javalab;
 
-import java.util.Random;
-
 /**
  *
  * @author cmccl_000
  */
-public class RandomBot extends Player{
+public class IterativeBot extends Player{
+    int choice = -1;
     
-    public RandomBot(String name){
+    public IterativeBot(String name){
         super(name);
     }
     
     public Element play(){
-        Random r = new Random();
-        int choice = r.nextInt((5 - 1) + 1) + 1;
         Element e = new Rock("Blank");
+        choice = ((choice + 1) % 5) + 1;
         switch(choice){
             case 1:
                 e = new Rock("Rock");

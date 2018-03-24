@@ -5,23 +5,35 @@
  */
 package csci305.javalab;
 
-import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
  * @author cmccl_000
  */
-public class RandomBot extends Player{
+public class Human extends Player{
     
-    public RandomBot(String name){
+    public Human(String name){
         super(name);
     }
     
     public Element play(){
-        Random r = new Random();
-        int choice = r.nextInt((5 - 1) + 1) + 1;
         Element e = new Rock("Blank");
-        switch(choice){
+        int n = 0;
+        boolean valid = false;
+        printChoice();
+        while(valid){
+            System.out.print("Enter your move: ");
+            Scanner s = new Scanner(System.in);
+            n = s.nextInt();
+            System.out.println();
+            if(n >= 1 && n <= 5){
+                valid = true;
+            }else{
+                System.out.println("Invalid move. Please try again.");
+            }
+        }
+        switch(n){
             case 1:
                 e = new Rock("Rock");
                 break;
@@ -39,6 +51,14 @@ public class RandomBot extends Player{
                 break;
         }
         return e;
+    }
+    
+    public void printChoice(){
+        System.out.println("(1) : Rock");
+        System.out.println("(2) : Paper");
+        System.out.println("(3) : Scissors");
+        System.out.println("(4) : Lizard");
+        System.out.println("(5) : Spock");
     }
     
     public Element play(String s){

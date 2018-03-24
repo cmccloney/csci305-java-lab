@@ -21,4 +21,6 @@ public abstract class Player {
     }
     
     public abstract Element play();
+    
+    public abstract Element play(String n);
 }
