@@ -116,3 +116,6 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 /.idea/
+/src/main/java/JavaApplication38/nbproject/private/
+/src/main/java/JavaApplication38/build/
+/src/main/java/JavaApplication38/dist/
