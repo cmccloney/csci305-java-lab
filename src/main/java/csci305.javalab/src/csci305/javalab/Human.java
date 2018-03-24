@@ -20,17 +20,17 @@ public class Human extends Player{
     public Element play(){
         Element e = new Rock("Blank");
         int n = 0;
-        boolean valid = false;
         printChoice();
+        Scanner s = new Scanner(System.in);
+        boolean valid = true;
         while(valid){
             System.out.print("Enter your move: ");
-            Scanner s = new Scanner(System.in);
             n = s.nextInt();
             System.out.println();
-            if(n >= 1 && n <= 5){
-                valid = true;
-            }else{
+            if(n < 1 || n > 5){
                 System.out.println("Invalid move. Please try again.");
+            }else{
+                valid = false;
             }
         }
         switch(n){
