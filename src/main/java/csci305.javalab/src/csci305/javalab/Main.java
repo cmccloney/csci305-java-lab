@@ -59,6 +59,10 @@ public class Main {
         Player p2 = player(temp2);
         System.out.println(p1.getName() + " vs " + p2.getName() + ". Go!");
         System.out.println();
+        playGame(p1, p2);
+    }
+    
+    public static void playGame(Player p1, Player p2){
         int p1wins = 0;
         int p2wins = 0;
         Element p1move;
@@ -72,7 +76,11 @@ public class Main {
                 }else{
                     p1move = p2.play();
                 }
-                p2move = p1.play();
+                if(i > 1 && p1.getName().equals("MyBoy")){
+                    p2move = p1.play(result);
+                }else{
+                    p2move = p1.play();
+                }
                 System.out.println("  Player 1 chose " + p2move.getName());
                 System.out.println("  Player 2 chose " + p1move.getName());
             }else{
@@ -82,7 +90,11 @@ public class Main {
                     p1move = p1.play();
                 }
                 System.out.println("  Player 1 chose " + p1move.getName());
-                p2move = p2.play();
+                if(i > 1 && p2.getName().equals("MyBot")){
+                    p2move = p2.play(result);
+                }else{
+                    p2move = p2.play();
+                }
                 System.out.println("  Player 2 chose " + p2move.getName());
             }
             result = p1move.compareTo(p2move);

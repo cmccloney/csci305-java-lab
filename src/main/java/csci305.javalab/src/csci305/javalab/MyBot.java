@@ -45,7 +45,7 @@ public class MyBot extends Player{ //tracks number of wins for each
         int bestChoice = 0;
         int numWins = 0;
         for(int i = 0; i < 5; i++){
-            if(wins[i] > numWins){
+            if(wins[i] >= numWins){
                 bestChoice = i;
                 numWins = wins[i];
             }
